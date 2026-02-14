@@ -65,7 +65,7 @@ h1{font-family:'Pacifico',cursive;font-size:2.2rem;color:white;margin-top:20px;t
 <div class="credit">Created with 💜 by Pritam Dash</div>
 <script>
 const noBtn=document.getElementById("noBtn");const area=document.getElementById("buttonArea");const plea=document.getElementById("plea");
-const messages=["Hari gali mu agyan? 🥺","gelu please 💜","oo ebe enti karia mo saha 😭","enti hebar nai 🌹","nai loo gelu 🥰"];
+const messages=["Hari gali mu agyan!! 🥺","Gelu please 💜","Ooo ebe enti karia mo saha 😭","Enti hebar nai 🌹","Hela auu 2yr pare sabu enti aka 😔"];
 let index=0;let isMoving=false;
 function dodgeButton(clientX,clientY){if(isMoving)return;const rect=noBtn.getBoundingClientRect();const dx=clientX-(rect.left+rect.width/2);const dy=clientY-(rect.top+rect.height/2);const distance=Math.sqrt(dx*dx+dy*dy);if(distance<100){isMoving=true;const maxX=area.clientWidth-noBtn.offsetWidth-10;const maxY=area.clientHeight-noBtn.offsetHeight-10;const newX=Math.max(10,Math.random()*maxX);const newY=Math.max(10,Math.random()*maxY);noBtn.style.left=newX+"px";noBtn.style.top=newY+"px";noBtn.style.transform="none";plea.style.display="block";plea.innerText=messages[index];index=(index+1)%messages.length;setTimeout(()=>{isMoving=false;},300);}}
 area.addEventListener("mousemove",(e)=>{dodgeButton(e.clientX,e.clientY);});
